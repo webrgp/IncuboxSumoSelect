@@ -178,7 +178,11 @@
             O.setText();
             O.hideOpts();
           });
-          O.optDiv.append($('<div class="MultiControls">').append(okbtn).append(cancelBtn));
+          newItem = $('<div class="newItem"><input type="text" placeholder="Add New Car" /></div>');
+          O.optDiv.append($('<div class="MultiControls">')
+              .append(newItem)
+              .append(okbtn)
+              .append(cancelBtn));
         },
 
         showOpts: function () {
