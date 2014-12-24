@@ -1,0 +1,6 @@
+{
+  "name": "Incubox SumoSelect",
+  "dependencies": {
+    "jquery": "~1.11.*"
+  }
+}

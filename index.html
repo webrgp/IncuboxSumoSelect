@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Incubox SumoSelect</title>
+
+  <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/sumoselect.css">
+  
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Incubox SumoSelect</h1>
+
+    <h3>Multiple w/ group</h3>
+
+    <select multiple="multiple" placeholder="Hello  im from placeholder" class="SlectBox">
+      <option value="all">Select All</option>
+      <optgroup label="Group 1">
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+      </optgroup>
+      <optgroup label="Group 2">
+        <option value="audi">Audi</option>
+        <option value="bmw">BMW</option>
+      </optgroup>
+    </select>
+
+  </div>
+
+  
+
+  <script src="components/jquery/dist/jquery.min.js"></script>
+  <script src="js/jquery.sumoselect.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      window.test = $('.SlectBox').SumoSelect({ okCancelInMulti:true });
+    });
+  </script>
+
+  
+</body>
+</html>
