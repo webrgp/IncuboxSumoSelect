@@ -17,7 +17,7 @@
 
     <h3>Multiple w/ group</h3>
 
-    <select multiple="multiple" placeholder="Hello  im from placeholder" class="SlectBox">
+    <select multiple="multiple" placeholder="" class="SlectBox">
       <option value="all">Select All</option>
       <optgroup label="Group 1">
         <option value="saab">Saab</option>
@@ -38,7 +38,10 @@
 
   <script type="text/javascript">
     $(document).ready(function () {
-      window.test = $('.SlectBox').SumoSelect({ okCancelInMulti:true });
+      window.test = $('.SlectBox').SumoSelect({
+        okCancelInMulti: true ,
+        newItemPlaceholder: 'Add New Car'
+      });
     });
   </script>
 

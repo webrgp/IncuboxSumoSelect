@@ -18,6 +18,7 @@
     // This is the easiest way to have default options.
     var settings = $.extend({
         placeholder: 'Select Here',   // Dont change it here.
+        newItemPlaceholder: 'Add New Item',   // Dont change it here.
         csvDispCount: 3,              // display no. of items in multiselect. 0 to display all.
         captionFormat:'{0} Selected', // format of caption text. you can set your locale.
         floatWidth: 400,              // Screen width of device at which the list is rendered in floating popup fashion.
@@ -39,6 +40,7 @@
         select: '',
         caption: '',
         placeholder: '',
+        newItemPlaceholder: '',
         optDiv: '',
         CaptionCont: '',
         is_floating: false,
@@ -178,7 +180,16 @@
             O.setText();
             O.hideOpts();
           });
-          newItem = $('<div class="newItem"><input type="text" placeholder="Add New Car" /></div>');
+          newItem = $('<div class="newItem"></div>');
+          newItemField = $('<input type="text" placeholder="'+ settings.newItemPlaceholder +'" />').on('keyup', function(event) {
+            if ( event.which === 13 ) {
+              console.log( this.value );
+              O.add( this.value );
+              this.value = "";
+            };
+          });
+
+          newItem.append(newItemField);
           O.optDiv.append($('<div class="MultiControls">')
               .append(newItem)
               .append(okbtn)
