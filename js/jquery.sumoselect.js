@@ -182,8 +182,7 @@
           });
           newItem = $('<div class="newItem"></div>');
           newItemField = $('<input type="text" placeholder="'+ settings.newItemPlaceholder +'" />').on('keyup', function(event) {
-            if ( event.which === 13 ) {
-              console.log( this.value );
+            if ( event.which === 13 && this.value != "") {
               O.add( this.value );
               this.value = "";
             };
